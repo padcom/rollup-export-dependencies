@@ -1,6 +1,6 @@
 {
   "name": "@padcom/rollup-export-dependencies",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Facility to produce 'external' and 'globals' for rollup from package.json",
   "type": "module",
   "main": "./dist/rollup-export-dependencies.umd.cjs",
