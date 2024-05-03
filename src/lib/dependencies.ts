@@ -13,16 +13,16 @@ function makeModuleConst(name: string) {
     .replaceAll('-', '')
 }
 
-export default function({
+export default ({
   dependencies,
   peerDependencies,
   optionalDependencies,
-}: DependenciesOptions = {}) {
+}: DependenciesOptions = {}) => {
   const external = [
     ...Object.keys(dependencies || {}),
     ...Object.keys(peerDependencies || {}),
     ...Object.keys(optionalDependencies || {}),
-  ]
+  ].filter(name => !name.startsWith('@types/'))
   const globals = external.reduce((acc, entry) => ({ ...acc, [entry]: makeModuleConst(entry) }), {})
 
   return { external, globals }
