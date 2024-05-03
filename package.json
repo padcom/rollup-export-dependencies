@@ -1,0 +1,55 @@
+{
+  "name": "@padcom/rollup-export-dependencies",
+  "version": "0.0.1",
+  "description": "Facility to produce 'external' and 'globals' for rollup from package.json",
+  "type": "module",
+  "main": "./dist/rollup-export-dependencies.umd.cjs",
+  "module": "./dist/rollup-export-dependencies.js",
+  "types": "./dist/types.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/rollup-export-dependencies.umd.cjs",
+      "import": "./dist/rollup-export-dependencies.js",
+      "types": "./dist/types.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "npm run dev",
+    "test": "vitest run --root . --coverage",
+    "test:watch": "vitest watch --root . --coverage",
+    "lint": "eslint './src/**/*.{ts,vue}'",
+    "dev": "vite build -w",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "Matthias Hryniszak <padcom@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@padcom/eslint-config-vue": "^0.8.0",
+    "@vitest/coverage-v8": "^1.5.2",
+    "@vue/tsconfig": "^0.5.1",
+    "eslint": "^8.56.0",
+    "typescript": ">= 3.3.1 < 5.2.0",
+    "vite": "^5.2.10",
+    "vite-plugin-dts": "^3.9.0",
+    "vite-plugin-eslint": "^1.8.1",
+    "vitest": "^1.5.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@padcom/eslint-config-vue"
+    ]
+  },
+  "homepage": "https://github.com/padcom/rollup-export-dependencies#readme",
+  "bugs": {
+    "url": "https://github.com/padcom/rollup-export-dependencies/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/padcom/rollup-export-dependencies.git"
+  }
+}
